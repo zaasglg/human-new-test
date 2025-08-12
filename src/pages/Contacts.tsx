@@ -124,7 +124,7 @@ const Contacts = () => {
               <div className="bg-white rounded-lg border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
                 <div className="mb-8">
                   <h2 className="text-3xl font-bold text-black mb-4">
-                    Q-Mind Insights Hub
+                    Q-MIND PROFILING
                   </h2>
                   <p className="text-gray-600">
                     Инновационная платформа для научного анализа человеческого

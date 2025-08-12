@@ -11,7 +11,7 @@ export const AnimatedList = ({ items, className = '' }: AnimatedListProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
-    }, 4000); // Меняется каждые 4 секунды
+    }, 1500); // Меняется каждые 4 секунды
 
     return () => clearInterval(interval);
   }, [items.length]);

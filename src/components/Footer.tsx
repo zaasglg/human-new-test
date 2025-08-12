@@ -15,8 +15,10 @@ const Footer = () => {
                 <span className="text-black font-bold text-sm">Q</span>
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-white">Q-Mind</span>
-                <span className="text-sm text-gray-400">Insights Hub</span>
+                <span className="text-xl font-bold text-white">Q-MIND</span>
+                <span className="text-sm text-gray-400">PSYCHOLOGICAL PROFILE
+
+</span>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -113,7 +115,7 @@ const Footer = () => {
               © {currentYear} Q-Mind Insights Hub. Все права защищены.
             </div>
             <div className="text-sm text-gray-400">
-              ООО "Q-Mind" | ИНН 7777777777
+              ТОО "Q-MIND" | БИН 7777777777
             </div>
           </div>
         </div>

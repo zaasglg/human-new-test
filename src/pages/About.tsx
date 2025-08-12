@@ -62,7 +62,7 @@ const About = () => {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-8">
-              Наш метод основан на трех китах: объективная технология, глубокая
+              Наш метод основан на трех китах: объективная научная технология, глубокая
               психологическая экспертиза и современные IT-решения.
             </p>
           </div>
@@ -144,7 +144,7 @@ const About = () => {
                   Основываясь на{" "}
                   <strong className="text-black">20-летнем опыте</strong> в
                   психодиагностике, мы создали метод, который переводит биоданные
-                  в понятные и точные рекомендации для HR и управленцев.
+                  в понятные и точные рекомендации для HR, управленцев и заинтересованных лиц.
                 </p>
 
                 <div className="bg-white rounded-lg p-6 border-l-4 border-black group-hover:border-l-8 group-hover:shadow-md transition-all duration-300">

@@ -258,33 +258,36 @@ const data = [
     <div className="min-h-screen">
       <Header />
       {/* Hero Section */}
-      <section className=" flex flex-col items-center justify-center px-8 py-24 bg-white text-center">
-        <div className="max-w-5xl mx-auto space-y-8">
-          <p className="text-sm uppercase text-gray-500 tracking-widest font-medium">
-            PSYCHOLOGICAL PROFILE
+        <section className="flex flex-col items-center justify-center px-4 sm:px-6 md:px-8 py-16 sm:py-20 md:py-24 bg-white text-center">
+  <div className="max-w-5xl mx-auto space-y-6 sm:space-y-8">
+    <p className="text-xs sm:text-sm uppercase text-gray-500 tracking-widest font-medium">
+    НАУКА ДЛЯ БЕЗОПАСНОСТИ БИЗНЕСА    </p>
+
+    <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-black leading-tight uppercase">
+      Человеческий Фактор —
+      <span className="block mt-2">
+        под Вашим Контролем
+      </span>
+    </h1>
+
+    {/* <p className="text-xs sm:text-sm uppercase text-gray-500 tracking-widest font-medium">
+      НАУКА ДЛЯ БЕЗОПАСНОСТИ БИЗНЕСА
+    </p> */}
+    <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-3xl mx-auto">
+            Перестаньте терять деньги на ошибках найма, выгорании и скрытых
+            рисках. Внедрите систему объективной психодиагностики и принимайте
+            кадровые решения, основанные на реальных данных, а не на догадках.
           </p>
-
-          <h1 className="text-5xl md:text-7xl font-bold text-black leading-tight uppercase">
-            Человеческий Фактор —
-            <span className="block mt-2">
-              под Вашим Контролем
-            </span>
-          </h1>
-          <p className="text-sm uppercase text-gray-500 tracking-widest font-medium">
-НАУКА ДЛЯ БЕЗОПАСНОСТИ БИЗНЕСА          </p>
-        
-
-          <div className="pt-8">
-            <Link to="/express-audit">
-              <button className="px-8 py-4 text-lg font-medium text-white bg-black border border-black hover:bg-white hover:text-black transition-all duration-300 rounded-full">
-                Пройти бесплатный Экспресс-Аудит Рисков
-                <ArrowRight className="w-5 h-5 ml-2 inline" />
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
+    <div className="pt-6 sm:pt-8 flex justify-center">
+      <Link to="/express-audit">
+        <button className="flex items-center justify-center px-4 sm:px-6 md:px-8 py-3 sm:py-4 text-sm sm:text-base md:text-lg font-medium text-white bg-black border border-black hover:bg-white hover:text-black transition-all duration-300 rounded-full">
+          Пройти бесплатный Экспресс-Аудит Рисков
+          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+        </button>
+      </Link>
+    </div>
+  </div>
+</section>
 
 
  {/* Problem Section */}
@@ -340,69 +343,84 @@ const data = [
 
 
  {/* Риски по типу деятельности */}
- <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-black mb-12 text-center">
-            Потенциальные проблемы и риски, которые мы выявляем
-          </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {/* Основные блоки слева */}
-            <div className="flex md:flex-col gap-4 md:sticky md:top-24 h-fit">
-              {data.map((category, index) => (
-                <div
-                  key={category.name}
-                  onClick={() => setActiveCategory(category)}
-                  className={`group cursor-pointer p-4 rounded-lg border-2 transition-all duration-300 w-full min-w-[180px] flex items-center space-x-3 hover:shadow-lg hover:-translate-y-1 ${activeCategory.name === category.name
-                    ? "bg-black text-white border-black"
-                    : "bg-white text-gray-800 border-gray-200 hover:border-black"
-                    }`}
+
+      <section className="py-16 sm:py-20 bg-white">
+  <div className="container mx-auto px-4">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-8 sm:mb-12 text-center leading-snug">
+      Потенциальные проблемы и риски, которые мы выявляем
+    </h2>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      {/* Категории */}
+      <div className="flex md:flex-col gap-4 overflow-x-auto md:overflow-visible pb-2 md:pb-0 no-scrollbar md:sticky md:top-24 h-fit">
+    {data.map((category) => (
+      <div
+        key={category.name}
+        onClick={() => setActiveCategory(category)}
+        className={`flex items-center space-x-3 min-w-[200px] sm:min-w-[240px] md:min-w-0 md:w-full p-4 rounded-lg border-2 transition-all duration-300 cursor-pointer
+          ${activeCategory.name === category.name
+            ? "bg-black text-white border-black"
+            : "bg-white text-gray-800 border-gray-200 hover:border-black hover:shadow-md"
+          }`}
+      >
+        <LayoutGrid
+          size={20}
+          className="shrink-0 transition-transform duration-300 group-hover:scale-110"
+        />
+        <span className="font-semibold text-sm sm:text-base leading-snug break-words overflow-hidden text-ellipsis">
+          {category.name}
+        </span>
+      </div>
+    ))}
+  </div>
+
+
+
+      {/* Подтемы */}
+      <div className="md:col-span-2 space-y-4">
+        {activeCategory.subtopics.map((sub, index) => (
+          <div key={sub.title}>
+            <button
+              onClick={() => toggleDescription(index)}
+              className="group flex items-center justify-between w-full px-4 sm:px-6 py-3 sm:py-4 text-left bg-white rounded-lg border border-gray-200 hover:border-black hover:shadow-md transition-all duration-300"
+            >
+              <div className="flex items-center space-x-3">
+                <HelpCircle
+                  className="text-gray-600 group-hover:text-black transition-all duration-300"
+                  size={20}
+                />
+                <span className="text-sm sm:text-base font-medium group-hover:text-black transition-colors duration-300">
+                  {sub.title}
+                </span>
+              </div>
+              <ChevronDown
+                className={`text-gray-400 group-hover:text-black transition-all duration-300 ${visibleDescriptions[index] ? "rotate-180" : ""}`}
+                size={20}
+              />
+            </button>
+
+            <AnimatePresence>
+              {visibleDescriptions[index] && (
+                <motion.div
+                  key={sub.title}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="mt-2 p-4 sm:p-6 bg-gray-50 border border-gray-200 rounded-lg text-gray-800"
                 >
-                  <LayoutGrid size={20} className="group-hover:scale-110 transition-transform duration-300" />
-                  <span className="text-base font-semibold">
-                    {category.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {/* Подтемы */}
-            <div className="md:col-span-2 space-y-4">
-              {activeCategory.subtopics.map((sub, index) => (
-                <div key={sub.title}>
-                  <button
-                    onClick={() => toggleDescription(index)}
-                    className="group flex items-center justify-between w-full px-6 py-4 text-left bg-white rounded-lg border border-gray-200 hover:border-black hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-                  >
-                    <div className="flex items-center space-x-3">
-                      <HelpCircle className="text-gray-600 group-hover:text-black group-hover:scale-110 transition-all duration-300" size={20} />
-                      <span className="text-md font-medium group-hover:text-black transition-colors duration-300">{sub.title}</span>
-                    </div>
-                    <ChevronDown className="text-gray-400 group-hover:text-black group-hover:scale-110 transition-all duration-300" size={20} />
-                  </button>
-
-                  <AnimatePresence>
-                    {visibleDescriptions[index] && (
-                      <motion.div
-                        key={sub.title}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        className="mt-2 p-6 bg-gray-100 border border-gray-200 rounded-lg text-gray-800"
-                      >
-                        <p className="leading-relaxed text-sm">
-                          {sub.description}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
-            </div>
+                  <p className="leading-relaxed text-sm sm:text-base">
+                    {sub.description}
+                  </p>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
-        </div>
-      </section>
-
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
 
       {/* Risks */}
@@ -673,11 +691,7 @@ const data = [
                 <ArrowRight className="ml-3 w-6 h-6" />
               </button>
             </Link>
-            <p className="text-sm md:text-base text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            Перестаньте терять деньги на ошибках найма, выгорании и скрытых
-            рисках. Внедрите систему объективной психодиагностики и принимайте
-            кадровые решения, основанные на реальных данных, а не на догадках.
-          </p>
+            
           </div>
         </div>
       </section>

@@ -22,7 +22,7 @@ const Header = () => {
     { name: "О Методе", href: "/about" },
     { name: "Услуги", href: "/services" },
     { name: "Кейсы", href: "/cases" },
-    { name: "Контакты", href: "/contacts" },
+    { name: "Свяжитесь с нами", href: "/contacts" },
   ];
 
   const isActive = (href: string) => location.pathname === href;

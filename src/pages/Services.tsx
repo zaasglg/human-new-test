@@ -429,9 +429,13 @@ const Services = () => {
                 пути на основе объективного анализа ваших способностей и
                 склонностей.
               </p>
-              <div className="inline-block bg-white-200 text-gray-600 px-4 py-2 rounded-full text-sm font-medium border-green-500 border-2">
-                Уже есть
+              {/* <div className="inline-block bg-white-200 text-gray-600 px-4 py-2 rounded-full text-sm font-medium border-green-500 border-2">
+                Заказать услугу
+              </div> */}
+              <div className="inline-block bg-gray-200 text-gray-600 px-4 py-2 rounded-full text-sm font-medium">
+              <a href="/contacts">Заказать услугу</a>
               </div>
+
             </div>
             <div className="group bg-white rounded-lg border border-gray-200 p-8 text-center hover:border-black hover:shadow-lg hover:-translate-y-2 transition-all duration-500">
               <div className="mx-auto mb-6 w-16 h-16 bg-black rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
@@ -446,7 +450,7 @@ const Services = () => {
                 склонностей.
               </p>
               <div className="inline-block bg-gray-200 text-gray-600 px-4 py-2 rounded-full text-sm font-medium">
-                В разработке
+              <a href="/contacts">Заказать услугу</a>
               </div>
             </div>
 
@@ -456,13 +460,15 @@ const Services = () => {
               </div>
               <h3 className="text-xl font-bold text-black mb-4">
                 Совместимость пар
+                
               </h3>
               <p className="text-gray-600 mb-6 group-hover:text-gray-800 transition-colors duration-300">
                 Анализ психологической совместимости партнеров для построения
                 гармоничных отношений на основе объективных данных.
               </p>
               <div className="inline-block bg-gray-200 text-gray-600 px-4 py-2 rounded-full text-sm font-medium">
-                В разработке
+              
+              <a href="/contacts">Заказать услугу</a>
               </div>
             </div>
           </div>

@@ -11,8 +11,14 @@ import {
   ChevronUp,
   ChevronDown,
   ShieldCheck,
+  Maximize2,
 } from "lucide-react";
 import { useState } from "react";
+import React from "react";
+import { motion } from "framer-motion";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Card, CardContent } from "@/components/ui/card";
+
 
 const About = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -21,7 +27,7 @@ const About = () => {
     {
       question: "Это научно?",
       answer:
-        "Да. Сама технология ГРВ апробирована и используется в науке и медицине. Мы лично поставляли оборудование и обучали специалистов для МО и НГ РК. Наш метод интерпретации основан на моделях современной научной психологии.",
+        "Да. Сама технология ГРВ апробирована и используется в науке и медицине. Мы поставляли оборудование и обучали специалистов Министерства обороны и Национальной гвардии РК. Наш метод интерпретации основан на моделях современной научной психологии.",
     },
     {
       question: "Насколько это точно?",
@@ -36,15 +42,32 @@ const About = () => {
     {
       question: "Как это помогает бизнесу?",
       answer:
-        "Наш метод позволяет выявить скрытые риски и конфликты в компании, что снижает вероятность ошибок при найме и повышает общую продуктивность. Мы помогаем руководителям принимать более обоснованные решения.",
+        "Метод повышает уровень безопасности организации, позволяет выявить скрытые риски и конфликты в компании. Метод снижает вероятность ошибок при найме и повышает общую продуктивность. Мы помогаем руководителям принимать более обоснованные решения.",
     },
-    // {
-    //   question: "Сколько времени занимает диагностика?",
-    //   answer:
-    //     "Обычно диагностика занимает около 10 минут на человека. Результаты предоставляются в виде подробного отчета с рекомендациями.",
-    // },
+    {
+      question: "Сколько времени занимает диагностика?",
+      answer:
+        "Обычно диагностика занимает в среднем 5 минут на человека. Результаты предоставляются в виде подробного отчета с рекомендациями через 2 часа.",
+    },
   ];
 
+  const youtubeId = "RHOhbzZgdfI";
+  const images = [
+    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop",
+  ];
+  const [open, setOpen] = React.useState(false);
+  const [activeImg, setActiveImg] = React.useState<string | null>(null);
+
+  const openImage = (src: string) => {
+    setActiveImg(src);
+    setOpen(true);
+  };
   return (
     <div className="min-h-screen">
       <Header />
@@ -122,6 +145,31 @@ const About = () => {
           </div>
         </div>
       </section>
+
+
+      <section className="w-full bg-white py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Текст сверху */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black leading-tight">
+          Метод апробирован Министерством обороны и национальной гвардии РК          </h2>
+          {/* <p className="mt-4 text-lg text-gray-600">
+          Метод апробирован Министерством обороны и национальной гвардии РК          </p> */}
+        </div>
+
+        {/* Видео снизу */}
+        <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+          <iframe
+            className="absolute inset-0 w-full h-full rounded-xl shadow-lg"
+            src="https://www.youtube.com/embed/RHOhbzZgdfI?rel=0&modestbranding=1"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </section>
+
 
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">

@@ -67,8 +67,8 @@ const Contacts = () => {
     {
       icon: MapPin,
       title: "Адрес",
-      value: "г. Алматы, ул. Абая 150/230",
-      description: 'Офис 301, БЦ "Технопарк"',
+      value: "РК, г. Туркестан, ул. Б. Саттарханова, 29/3",
+      description: 'Офис 603, Ректорат',
     },
   ];
 
@@ -203,7 +203,7 @@ const Contacts = () => {
                       type="text"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="Абылай Хаб"
+                      placeholder="Как к Вам обращаться?"
                       className="mt-2 border-gray-300 focus:border-black focus:ring-black"
                       required
                     />
@@ -219,7 +219,7 @@ const Contacts = () => {
                       type="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="ivan@company.ru"
+                      placeholder="email@example.com"
                       className="mt-2 border-gray-300 focus:border-black focus:ring-black"
                       required
                     />

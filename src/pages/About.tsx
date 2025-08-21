@@ -15,9 +15,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import React from "react";
-import { motion } from "framer-motion";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { Card, CardContent } from "@/components/ui/card";
+
 
 
 const About = () => {
@@ -51,23 +49,7 @@ const About = () => {
     },
   ];
 
-  const youtubeId = "RHOhbzZgdfI";
-  const images = [
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1503602642458-232111445657?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop",
-  ];
-  const [open, setOpen] = React.useState(false);
-  const [activeImg, setActiveImg] = React.useState<string | null>(null);
 
-  const openImage = (src: string) => {
-    setActiveImg(src);
-    setOpen(true);
-  };
   return (
     <div className="min-h-screen">
       <Header />
@@ -76,7 +58,7 @@ const About = () => {
       <section className="pt-32 pb-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold text-black leading-tight mb-6">
+            <h1 className="text-3xl md:text-6xl font-bold text-black leading-tight mb-6">
               Наука вместо догадок:
               <br />
               <span className="block mt-2">
@@ -97,7 +79,7 @@ const About = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-black mb-8">
+              <h2 className="text-3xl font-bold text-black mb-8">
                 Что такое ГРВ-биоэлектрография?
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
@@ -151,8 +133,8 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Текст сверху */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black leading-tight">
-          Метод апробирован Министерством обороны и национальной гвардии РК          </h2>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-black leading-tight">
+          Метод апробирован Министерством обороны и Национальной гвардии РК          </h2>
           {/* <p className="mt-4 text-lg text-gray-600">
           Метод апробирован Министерством обороны и национальной гвардии РК          </p> */}
         </div>
@@ -174,7 +156,7 @@ const About = () => {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-black mb-12 text-center">
+            <h2 className="text-3xl font-bold text-black mb-12 text-center">
               Почему наш подход действительно работает?
             </h2>
 

@@ -476,7 +476,7 @@ const data = [
                 <p className="text-gray-300 mb-6 group-hover:text-gray-200 transition-colors duration-300">
                   Внедрите систему объективной психодиагностики
                 </p>
-                <ul className="text-sm text-gray-300 space-y-3 text-left">
+                <ul className="text-sm text-white space-y-3 text-left">
                   <li className="flex items-start opacity-80 group-hover:opacity-100 group-hover:text-gray-200 transition-all duration-300 delay-100">
                     <span className="w-2 h-2 bg-white rounded-full mt-2 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></span>
                     Выявление стрессовых факторов

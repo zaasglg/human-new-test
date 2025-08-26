@@ -19,7 +19,7 @@ import { useEffect, useState } from "react";
 const Services = () => {
   const data = [
     {
-      name: "Для банковского сектора",
+      name: "Для финансового сектора",
       subtopics: [
         {
           title: "Финансовые риски, ошибки и качество/целостность данных: ",
@@ -271,7 +271,7 @@ const Services = () => {
     {
       title: "Пакет «Стандарт»",
       icon: Users,
-      price: "220 000 ₸",
+      price: "240 000 ₸",
       priceNote: "за 1 сотрудника в год",
       target:
         "Для компаний, желающих внедрить системный мониторинг и проактивное управление рисками для ключевой команды.",
@@ -402,69 +402,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Риски по типу деятельности */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-black mb-12 text-center">
-            Потенциальные проблемы и риски, которые мы выявляем
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {/* Основные блоки слева */}
-            <div className="flex md:flex-col gap-4 md:sticky md:top-24 h-fit">
-              {data.map((category, index) => (
-                <div
-                  key={category.name}
-                  onClick={() => setActiveCategory(category)}
-                  className={`group cursor-pointer p-4 rounded-lg border-2 transition-all duration-300 w-full min-w-[180px] flex items-center space-x-3 hover:shadow-lg hover:-translate-y-1 ${activeCategory.name === category.name
-                    ? "bg-black text-white border-black"
-                    : "bg-white text-gray-800 border-gray-200 hover:border-black"
-                    }`}
-                >
-                  <LayoutGrid size={20} className="group-hover:scale-110 transition-transform duration-300" />
-                  <span className="text-base font-semibold">
-                    {category.name}
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            {/* Подтемы */}
-            <div className="md:col-span-2 space-y-4">
-              {activeCategory.subtopics.map((sub, index) => (
-                <div key={sub.title}>
-                  <button
-                    onClick={() => toggleDescription(index)}
-                    className="group flex items-center justify-between w-full px-6 py-4 text-left bg-white rounded-lg border border-gray-200 hover:border-black hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-                  >
-                    <div className="flex items-center space-x-3">
-                      <HelpCircle className="text-gray-600 group-hover:text-black group-hover:scale-110 transition-all duration-300" size={20} />
-                      <span className="text-md font-medium group-hover:text-black transition-colors duration-300">{sub.title}</span>
-                    </div>
-                    <ChevronDown className="text-gray-400 group-hover:text-black group-hover:scale-110 transition-all duration-300" size={20} />
-                  </button>
-
-                  <AnimatePresence>
-                    {visibleDescriptions[index] && (
-                      <motion.div
-                        key={sub.title}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        className="mt-2 p-6 bg-gray-100 border border-gray-200 rounded-lg text-gray-800"
-                      >
-                        <p className="leading-relaxed text-sm">
-                          {sub.description}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+    
 
       {/* Future B2C Section */}
       <section className="py-24 bg-gray-100">
@@ -474,11 +412,31 @@ const Services = () => {
               Для Частных лиц (B2C)
             </h2>
             <p className="text-xl text-gray-600">
-              Скоро появятся новые направления для индивидуальных клиентов
+             Направления для индивидуальных клиентов
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 mx-auto">
+          <div className="group bg-white rounded-lg border border-gray-200 p-8 text-center hover:border-black hover:shadow-lg hover:-translate-y-2 transition-all duration-500">
+              <div className="mx-auto mb-6 w-16 h-16 bg-black rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
+                <Target className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold text-black mb-4">
+                Психологический Портрет
+              </h3>
+              <p className="text-gray-600 mb-6 group-hover:text-gray-800 transition-colors duration-300">
+                Научно обоснованный подход к выбору профессии и карьерного
+                пути на основе объективного анализа ваших способностей и
+                склонностей.
+              </p>
+              {/* <div className="inline-block bg-white-200 text-gray-600 px-4 py-2 rounded-full text-sm font-medium border-green-500 border-2">
+                Заказать услугу
+              </div> */}
+              <div className="inline-block bg-gray-200 text-gray-600 px-4 py-2 rounded-full text-sm font-medium">
+              <a href="/contacts">Заказать услугу</a>
+              </div>
+
+            </div>
             <div className="group bg-white rounded-lg border border-gray-200 p-8 text-center hover:border-black hover:shadow-lg hover:-translate-y-2 transition-all duration-500">
               <div className="mx-auto mb-6 w-16 h-16 bg-black rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500">
                 <Target className="w-8 h-8 text-white" />
@@ -492,7 +450,7 @@ const Services = () => {
                 склонностей.
               </p>
               <div className="inline-block bg-gray-200 text-gray-600 px-4 py-2 rounded-full text-sm font-medium">
-                В разработке
+              <a href="/contacts">Заказать услугу</a>
               </div>
             </div>
 
@@ -502,13 +460,15 @@ const Services = () => {
               </div>
               <h3 className="text-xl font-bold text-black mb-4">
                 Совместимость пар
+                
               </h3>
               <p className="text-gray-600 mb-6 group-hover:text-gray-800 transition-colors duration-300">
                 Анализ психологической совместимости партнеров для построения
                 гармоничных отношений на основе объективных данных.
               </p>
               <div className="inline-block bg-gray-200 text-gray-600 px-4 py-2 rounded-full text-sm font-medium">
-                В разработке
+              
+              <a href="/contacts">Заказать услугу</a>
               </div>
             </div>
           </div>

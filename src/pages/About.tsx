@@ -11,8 +11,12 @@ import {
   ChevronUp,
   ChevronDown,
   ShieldCheck,
+  Maximize2,
 } from "lucide-react";
 import { useState } from "react";
+import React from "react";
+
+
 
 const About = () => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -21,7 +25,7 @@ const About = () => {
     {
       question: "Это научно?",
       answer:
-        "Да. Сама технология ГРВ апробирована и используется в науке и медицине. Мы лично поставляли оборудование и обучали специалистов для МО и НГ РК. Наш метод интерпретации основан на моделях современной научной психологии.",
+        "Да. Сама технология ГРВ апробирована и используется в науке и медицине. Мы поставляли оборудование и обучали специалистов Министерства обороны и Национальной гвардии РК. Наш метод интерпретации основан на моделях современной научной психологии.",
     },
     {
       question: "Насколько это точно?",
@@ -36,14 +40,15 @@ const About = () => {
     {
       question: "Как это помогает бизнесу?",
       answer:
-        "Наш метод позволяет выявить скрытые риски и конфликты в компании, что снижает вероятность ошибок при найме и повышает общую продуктивность. Мы помогаем руководителям принимать более обоснованные решения.",
+        "Метод повышает уровень безопасности организации, позволяет выявить скрытые риски и конфликты в компании. Метод снижает вероятность ошибок при найме и повышает общую продуктивность. Мы помогаем руководителям принимать более обоснованные решения.",
     },
-    // {
-    //   question: "Сколько времени занимает диагностика?",
-    //   answer:
-    //     "Обычно диагностика занимает около 10 минут на человека. Результаты предоставляются в виде подробного отчета с рекомендациями.",
-    // },
+    {
+      question: "Сколько времени занимает диагностика?",
+      answer:
+        "Обычно диагностика занимает в среднем 5 минут на человека. Результаты предоставляются в виде подробного отчета с рекомендациями через 2 часа.",
+    },
   ];
+
 
   return (
     <div className="min-h-screen">
@@ -53,7 +58,7 @@ const About = () => {
       <section className="pt-32 pb-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold text-black leading-tight mb-6">
+            <h1 className="text-3xl md:text-6xl font-bold text-black leading-tight mb-6">
               Наука вместо догадок:
               <br />
               <span className="block mt-2">
@@ -62,7 +67,7 @@ const About = () => {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-8">
-              Наш метод основан на трех китах: объективная технология, глубокая
+              Наш метод основан на трех китах: объективная научная технология, глубокая
               психологическая экспертиза и современные IT-решения.
             </p>
           </div>
@@ -74,7 +79,7 @@ const About = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-black mb-8">
+              <h2 className="text-3xl font-bold text-black mb-8">
                 Что такое ГРВ-биоэлектрография?
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed">
@@ -123,10 +128,35 @@ const About = () => {
         </div>
       </section>
 
+
+      <section className="w-full bg-white py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Текст сверху */}
+        <div className="text-center mb-12">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-black leading-tight">
+          Метод апробирован Министерством обороны и Национальной гвардии РК          </h2>
+          {/* <p className="mt-4 text-lg text-gray-600">
+          Метод апробирован Министерством обороны и национальной гвардии РК          </p> */}
+        </div>
+
+        {/* Видео снизу */}
+        <div className="relative w-full" style={{ paddingTop: "56.25%" }}>
+          <iframe
+            className="absolute inset-0 w-full h-full rounded-xl shadow-lg"
+            src="https://www.youtube.com/embed/RHOhbzZgdfI?rel=0&modestbranding=1"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </section>
+
+
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-black mb-12 text-center">
+            <h2 className="text-3xl font-bold text-black mb-12 text-center">
               Почему наш подход действительно работает?
             </h2>
 
@@ -144,7 +174,7 @@ const About = () => {
                   Основываясь на{" "}
                   <strong className="text-black">20-летнем опыте</strong> в
                   психодиагностике, мы создали метод, который переводит биоданные
-                  в понятные и точные рекомендации для HR и управленцев.
+                  в понятные и точные рекомендации для HR, управленцев и заинтересованных лиц.
                 </p>
 
                 <div className="bg-white rounded-lg p-6 border-l-4 border-black group-hover:border-l-8 group-hover:shadow-md transition-all duration-300">

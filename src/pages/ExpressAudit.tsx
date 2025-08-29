@@ -209,7 +209,7 @@ const ExpressAudit = () => {
     try {
 
       const open_ai_key = "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";
-
+      
       const res = await fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
         headers: {

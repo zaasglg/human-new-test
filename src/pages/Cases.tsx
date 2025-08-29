@@ -167,7 +167,7 @@ const Cases = () => {
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Контент слева */}
-              <div className="bg-white rounded-lg border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-500">
+              <div className="bg-white rounded-lg border border-gray-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-500 order-2 lg:order-1">
                 <div className="space-y-6">
                   <div className="space-y-4">
                     <div className="flex items-start space-x-3">
@@ -245,7 +245,7 @@ const Cases = () => {
               </div>
 
               {/* Анимация справа */}
-              <div className="flex items-center justify-center">
+              <div className="flex items-center justify-center order-1 lg:order-2">
                 <div className="w-full h-[400px] rounded-lg overflow-hidden">
                   <iframe
                     src="https://lottie.host/embed/e8177f8c-576f-409b-99cf-295dfbc28260/kgutbS68w0.lottie"
@@ -259,11 +259,16 @@ const Cases = () => {
         </div>
       </section>
 
-      <section className="py-24 bg-gray-100">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 items-center gap-12">
-            {/* Анимированная иллюстрация */}
-            <div className="relative">
+ 
+
+
+      <section className="py-16 sm:py-24 bg-gray-100">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+      {/* Анимированная иллюстрация */}
+      <div className="relative flex justify-center">
+        <div className="w-[260px] sm:w-[400px] md:w-[600px] h-[260px] sm:h-[400px] md:h-[600px] animate-spin" style={{ animationDuration: '10s' }}>
+        <div className="relative">
               <div className="w-full h-[400px] flex items-center justify-center">
                 <div className="w-[600px] h-[600px] animate-spin" style={{ animationDuration: '10s' }}>
                   <svg
@@ -329,93 +334,65 @@ const Cases = () => {
                 </div>
               </div>
             </div>
+        </div>
+      </div>
 
-            {/* Контент */}
-            <div>
-              <h2 className="text-4xl font-bold text-black mb-8">
-                Индивидуальный подход, реальные результаты
-              </h2>
+      {/* Контент */}
+      <div>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-black mb-6 md:mb-8">
+          Индивидуальный подход, реальные результаты
+        </h2>
 
-              <div className="space-y-6">
-                {/* Пункт 1 */}
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-gray-100 text-black font-bold rounded-lg flex items-center justify-center mr-4">
-                    1
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-black mb-1">
-                      Инновация
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Методика интерпретации ГРВ-данных — наша оригинальная
-                      разработка на основе 20-летнего опыта.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Пункт 2 */}
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-gray-100 text-black font-bold rounded-lg flex items-center justify-center mr-4">
-                    2
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-black mb-1">
-                      Качество данных
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Все кейсы сопровождаются верифицированными результатами и
-                      ключевыми метриками.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Пункт 3 */}
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-gray-100 text-black font-bold rounded-lg flex items-center justify-center mr-4">
-                    3
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-black mb-1">
-                      Конфиденциальность
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Мы сохраняем анонимность кейсов, но демонстрируем ключевые
-                      инсайты и результаты.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Пункт 4 */}
-                <div className="flex items-start">
-                  <div className="w-10 h-10 bg-gray-100 text-black font-bold rounded-lg flex items-center justify-center mr-4">
-                    4
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-black mb-1">
-                      Фокус на ROI
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Мы нацелены на реальные изменения и ценим долгосрочные
-                      эффекты, а не только быстрые результаты.
-                    </p>
-                  </div>
-                </div>
+        <div className="space-y-6">
+          {[
+            {
+              num: 1,
+              title: "Инновация",
+              desc: "Методика интерпретации ГРВ-данных — наша оригинальная разработка на основе 20-летнего опыта."
+            },
+            {
+              num: 2,
+              title: "Качество данных",
+              desc: "Все кейсы сопровождаются верифицированными результатами и ключевыми метриками."
+            },
+            {
+              num: 3,
+              title: "Конфиденциальность",
+              desc: "Мы сохраняем анонимность кейсов, но демонстрируем ключевые инсайты и результаты."
+            },
+            {
+              num: 4,
+              title: "Фокус на ROI",
+              desc: "Мы нацелены на реальные изменения и ценим долгосрочные эффекты, а не только быстрые результаты."
+            }
+          ].map((item) => (
+            <div key={item.num} className="flex items-start">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 text-black font-bold rounded-lg flex items-center justify-center mr-3 sm:mr-4 text-sm sm:text-base">
+                {item.num}
               </div>
-
-              {/* Call-to-Action */}
-              <div className="mt-10 bg-white p-6 rounded-lg border border-gray-200 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <p className="text-black font-semibold text-lg mb-1">
-                  Станьте частью будущих историй успеха
-                </p>
-                <p className="text-gray-600 text-sm">
-                  Закажите индивидуальный кейс и получите приоритетный анализ от
-                  нашей научной команды.
-                </p>
+              <div>
+                <h4 className="text-base sm:text-lg font-semibold text-black mb-1">{item.title}</h4>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
             </div>
-          </div>
+          ))}
         </div>
-      </section>
+
+        {/* Call-to-Action */}
+        <div className="mt-8 md:mt-10 bg-white p-4 sm:p-6 rounded-lg border border-gray-200 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <p className="text-black font-semibold text-base sm:text-lg mb-1">
+            Станьте частью будущих историй успеха
+          </p>
+          <p className="text-gray-600 text-xs sm:text-sm">
+            Закажите индивидуальный кейс и получите приоритетный анализ от нашей научной команды.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       {/* CTA Section */}
       <section className="py-24 bg-white">

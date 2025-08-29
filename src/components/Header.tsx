@@ -22,7 +22,7 @@ const Header = () => {
     { name: "О Методе", href: "/about" },
     { name: "Услуги", href: "/services" },
     { name: "Кейсы", href: "/cases" },
-    { name: "Контакты", href: "/contacts" },
+    { name: "Свяжитесь с нами", href: "/contacts" },
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -37,10 +37,10 @@ const Header = () => {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
-              <span className="text-white text-xl text-sm upperacase">Q</span>
+            <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center bg-green-500">
+              <span className="text-white text-xl text-sm upperacase ">Q</span>
             </div>
-            <span className="ml-2 text-xl font-thin text-black uppercase">Mind</span>
+            <span className="ml-2 text-xl font-thin text-black uppercase text-green-500">Mind</span>
           </Link>
 
           {/* Desktop Navigation */}
